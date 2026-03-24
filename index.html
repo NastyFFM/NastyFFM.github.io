@@ -51,30 +51,10 @@ h1{font-size:22px;margin-bottom:2px}
 <div class="toast" id="toast">Install-ID kopiert! Füge sie in deinem PulseOS Launcher ein.</div>
 <script>
 function copyInstall(repo, btn) {
-  const url = 'https://github.com/' + repo;
-  // Try clipboard first
-  navigator.clipboard.writeText(repo).then(() => {
-    btn.textContent = 'Copied!';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.textContent = 'Install'; btn.classList.remove('copied'); }, 2000);
-  }).catch(() => {});
-  // Show install modal
-  let m = document.getElementById('installModal');
-  if (m) m.remove();
-  m = document.createElement('div');
-  m.id = 'installModal';
-  m.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:9999;';
-  m.innerHTML = '<div style="background:#13131f;border:1px solid #2a2a3e;border-radius:12px;padding:24px;max-width:400px;width:90%;">' +
-    '<div style="font-weight:600;font-size:15px;margin-bottom:12px;">Install App</div>' +
-    '<div style="font-size:12px;color:#888;margin-bottom:16px;">In deinem PulseOS Dashboard:</div>' +
-    '<div style="font-size:12px;margin-bottom:8px;">1. Öffne den App Launcher (Cmd+K)</div>' +
-    '<div style="font-size:12px;margin-bottom:8px;">2. Klicke <b>"+ App installieren"</b></div>' +
-    '<div style="font-size:12px;margin-bottom:16px;">3. Füge ein: <code style="background:#1a1a2e;padding:2px 6px;border-radius:4px;color:#4ecdc4;">' + repo + '</code></div>' +
-    '<div style="display:flex;gap:8px;justify-content:flex-end;">' +
-    '<button onclick="document.getElementById('installModal').remove()" style="padding:6px 14px;background:#2a2a3e;border:none;color:#e0e0e0;border-radius:6px;cursor:pointer;font-size:12px;">Schließen</button>' +
-    '</div></div>';
-  m.addEventListener('click', function(e) { if (e.target === m) m.remove(); });
-  document.body.appendChild(m);
+  try { navigator.clipboard.writeText(repo); } catch(e) {}
+  btn.textContent = 'Copied!';
+  setTimeout(function() { btn.textContent = 'Install'; }, 2000);
+  alert('Install-ID: ' + repo + '\n\nIn deinem PulseOS Dashboard:\n1. Öffne App Launcher (Cmd+K)\n2. Klicke "+ App installieren"\n3. Füge ein: ' + repo);
 }
 </script>
 </body></html>
