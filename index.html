@@ -51,10 +51,11 @@ h1{font-size:22px;margin-bottom:2px}
 <div class="toast" id="toast">Install-ID kopiert! Füge sie in deinem PulseOS Launcher ein.</div>
 <script>
 function copyInstall(repo, btn) {
-  try { navigator.clipboard.writeText(repo); } catch(e) {}
-  btn.textContent = 'Copied!';
-  setTimeout(function() { btn.textContent = 'Install'; }, 2000);
-  alert('Install-ID: ' + repo + '\n\nIn deinem PulseOS Dashboard:\n1. Öffne App Launcher (Cmd+K)\n2. Klicke "+ App installieren"\n3. Füge ein: ' + repo);
+  var w = window.open('http://localhost:3000/?install=' + encodeURIComponent(repo), '_blank');
+  if (!w) {
+    try { navigator.clipboard.writeText(repo); } catch(e) {}
+    alert('Install-ID: ' + repo + '\n\nÖffne dein PulseOS Dashboard und füge im App Launcher unter "+ App installieren" ein: ' + repo);
+  }
 }
 </script>
 </body></html>
