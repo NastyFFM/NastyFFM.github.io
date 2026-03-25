@@ -8,7 +8,7 @@
   "twitter": "",
   "website": "",
   "links": [],
-  "apps": 20,
+  "apps": 23,
   "publicApps": [
     {
       "id": "notes",
@@ -18,18 +18,18 @@
       "installUrl": "NastyFFM/pulse-app-notes"
     },
     {
-      "id": "tasks",
-      "name": "Tasks",
-      "icon": "T",
-      "description": "Aufgaben und Todos verwalten",
-      "installUrl": "NastyFFM/pulse-app-tasks"
-    },
-    {
       "id": "calendar",
       "name": "Calendar",
       "icon": "C",
       "description": "Termine und Events",
       "installUrl": "NastyFFM/pulse-app-calendar"
+    },
+    {
+      "id": "files",
+      "name": "Files",
+      "icon": "F",
+      "description": "Datei-Browser",
+      "installUrl": "NastyFFM/pulse-app-files"
     },
     {
       "id": "weather",
@@ -52,18 +52,7 @@
       "name": "YouTube"
     }
   ],
-  "inviteApps": [
-    {
-      "id": "demo",
-      "name": "Würfel",
-      "allowedUsers": []
-    },
-    {
-      "id": "demo",
-      "name": "Würfel",
-      "allowedUsers": []
-    }
-  ],
+  "inviteApps": [],
   "roomId": "pulse-5093113b",
-  "updated": "2026-03-24T03:41:59.671Z"
+  "updated": "2026-03-25T18:20:17.003Z"
 }

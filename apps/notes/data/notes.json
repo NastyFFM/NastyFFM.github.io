@@ -1,6 +1,13 @@
 {
   "notes": [
     {
+      "id": "note-1774348912718",
+      "title": "wefwef",
+      "content": "",
+      "created": "2026-03-24T10:41:52.718Z",
+      "updated": "2026-03-24T10:41:53.739Z"
+    },
+    {
       "id": "note-1774318025671",
       "title": "tolle Neuigkeiten",
       "content": "tolle Neuigkeiten",
@@ -18,6 +25,13 @@
       "title": "Test Notiz",
       "content": "Erstellt zum Testen",
       "date": "2026-03-24T03:10:00Z"
+    },
+    {
+      "id": "note-agent-1",
+      "title": "Test vom PulseOS Agent",
+      "content": "Test vom PulseOS Agent",
+      "created": "2026-03-24T12:00:00.000Z",
+      "updated": "2026-03-24T12:00:00.000Z"
     }
   ]
 }
