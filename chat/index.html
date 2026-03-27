@@ -99,7 +99,9 @@ const ICE_SERVERS = [
 ];
 
 let socket = null, roomId = null;
-let myProfile = { name: '', avatar: '👤', handle: '' };
+// Unique guestId per tab — ensures each tab creates a separate chat in PulseOS
+const guestId = 'guest-' + Date.now().toString(36) + Math.random().toString(36).substr(2, 4);
+let myProfile = { name: '', avatar: '👤', handle: '', guestId };
 const peers = {}; // peerId → { pc, dc, profile }
 const msgIds = new Set();
 
@@ -137,7 +139,7 @@ function joinRoom() {
   if (!name) { document.getElementById('setupError').textContent = 'Bitte Name eingeben'; return; }
   if (!room) { document.getElementById('setupError').textContent = 'Bitte Raum-Code eingeben'; return; }
 
-  myProfile = { name, avatar, handle: name.toLowerCase().replace(/\s+/g, '-') + '-guest' };
+  myProfile = { name, avatar, handle: name.toLowerCase().replace(/\s+/g, '-') + '-guest', guestId };
   roomId = room;
   saveProfile();
 
