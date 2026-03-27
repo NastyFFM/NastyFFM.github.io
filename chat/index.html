@@ -261,8 +261,9 @@ function setupChannel(dc, targetId) {
   dc.onmessage = e => {
     try {
       const data = JSON.parse(e.data);
+      console.log('[DC] Received from', targetId, ':', data.type, data.text?.substring(0,30));
       handleMessage(data, targetId);
-    } catch {}
+    } catch(err) { console.warn('[DC] Parse error:', err); }
   };
 }
 
