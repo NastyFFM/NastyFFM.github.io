@@ -305,12 +305,22 @@ function sendMsg() {
 
   const msgId = 'g-' + Date.now() + Math.random().toString(36).substring(7);
 
-  // Send to all peers
+  // Send only to PulseOS host (not to other guests)
+  let sent = false;
   Object.values(peers).forEach(p => {
-    if (p.dc?.readyState === 'open') {
+    if (p.dc?.readyState === 'open' && p.profile?.pulseos) {
       p.dc.send(JSON.stringify({ type: 'chat-message', text, id: msgId, timestamp: Date.now() }));
+      sent = true;
     }
   });
+  // Fallback: send to all if no PulseOS host found
+  if (!sent) {
+    Object.values(peers).forEach(p => {
+      if (p.dc?.readyState === 'open') {
+        p.dc.send(JSON.stringify({ type: 'chat-message', text, id: msgId, timestamp: Date.now() }));
+      }
+    });
+  }
 
   addChatMsg(myProfile.name, myProfile.avatar, text, 'self', msgId);
 }
