@@ -8,7 +8,7 @@
   "twitter": "",
   "website": "",
   "links": [],
-  "apps": 23,
+  "apps": 35,
   "publicApps": [
     {
       "id": "notes",
@@ -32,11 +32,11 @@
       "installUrl": "NastyFFM/pulse-app-files"
     },
     {
-      "id": "weather",
-      "name": "Weather",
-      "icon": "W",
-      "description": "Wetter-Anzeige",
-      "installUrl": "NastyFFM/pulse-app-weather"
+      "id": "kanban",
+      "name": "Kanban",
+      "icon": "▦",
+      "description": "Kanban Board für Projekte und Tasks",
+      "installUrl": "NastyFFM/pulse-app-kanban"
     },
     {
       "id": "habit-tracker",
@@ -54,5 +54,19 @@
   ],
   "inviteApps": [],
   "roomId": "pulse-5093113b",
-  "updated": "2026-03-25T18:20:17.003Z"
+  "updated": "2026-03-29T09:40:24.317Z",
+  "pages": [
+    {
+      "id": "page-mn9cjh9n",
+      "title": "Neue Seite",
+      "slug": "neue-seite",
+      "type": "blog",
+      "content": "summer beach",
+      "media": [
+        "https://voca-land.sgp1.cdn.digitaloceanspaces.com/43844/1652589460330/8a553ed693545535545dd4654eac6e0f56d2c2825b203271ed02fbe25d98f57d.jpg"
+      ],
+      "updated": "2026-03-27T20:22:25.380Z",
+      "created": "2026-03-27T20:21:03.659Z"
+    }
+  ]
 }
